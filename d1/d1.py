@@ -4,7 +4,6 @@ def day1_1(filename, n):
         l = 0
         g = len(list) - 1
 
-        sum = list[l] + list[g]
         while l < g:
             sum = list[l] + list[g]
 
@@ -24,7 +23,6 @@ def day1_2(filename, n):
     with open(filename, "r") as input_file:
         list = sorted([int(i) for i in input_file])
 
-        sum = 0
         for idx, i in enumerate(list):
             l = idx + 1
             g = len(list) - 1
