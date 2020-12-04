@@ -21,7 +21,7 @@ def day2_1(filename):
                 rule_count += 1
         return rule_count
         
-print(d2_1("input.txt"))
+print(day2_1("input.txt"))
 
 def day2_2(filename):
     with open(filename, "r", encoding="utf-8") as input_file:
@@ -38,4 +38,4 @@ def day2_2(filename):
                 
         return rule_count
         
-print(d2_2("input.txt"))
+print(day2_2("input.txt"))
