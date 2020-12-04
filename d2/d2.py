@@ -1,4 +1,4 @@
-def d2_1(filename):
+def day2_1(filename):
     with open(filename, "r", encoding="utf-8") as input_file:
         rule_count = 0
         for line in input_file:
@@ -23,7 +23,7 @@ def d2_1(filename):
         
 print(d2_1("input.txt"))
 
-def d2_2(filename):
+def day2_2(filename):
     with open(filename, "r", encoding="utf-8") as input_file:
         rule_count = 0
         for line in input_file:
