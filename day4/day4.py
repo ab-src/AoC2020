@@ -20,6 +20,8 @@ def check_passport(passport, counter, day):
                 return counter
             elif field == "eyr" and is_int(passport[field]) and int(passport[field]) not in range(2020, 2031):
                 return counter
+            elif field in ["byr", "iyr", "eyr"] and not is_int(passport[field]):
+                return counter
             elif field == "hgt" and passport[field][-2:] != "cm" and passport[field][-2:] != "in":
                 return counter
             elif field == "hgt" and passport[field][-2:] == "cm" and int(passport[field][:-2]) not in range(150, 194):
@@ -34,7 +36,7 @@ def check_passport(passport, counter, day):
                     return counter
             elif field == "ecl" and passport[field] not in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]:
                 return counter
-            elif field == "pid" and not isinstance(passport[field], int) and len(passport[field]) != 9:
+            elif field == "pid" and not is_int(passport[field]) and len(passport[field]) != 9:
                 return counter
     return counter + 1
 
