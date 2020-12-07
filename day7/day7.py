@@ -21,11 +21,11 @@ def parse_child_bags(line):
         return []
     return inner_bags
 
-def bags_calculator(dictionary, rules, bag):
-    if bag not in dictionary:
+def bags_calculator(dictionary, rules, current_bag):
+    if current_bag not in dictionary:
         return 0
 
-    return sum([int(bag[1]) * (1 + bags_calculator(dictionary, rules, bag[0])) for bag in dictionary[bag].items()])
+    return sum([int(next_bag[1]) * (1 + bags_calculator(dictionary, rules, next_bag[0])) for next_bag in dictionary[current_bag].items()])
 
 def day7_1(filename):
     count = 0
@@ -52,9 +52,8 @@ def day7_2(filename):
             if len(child_bags) > 0:
                 bag_dict.update({current_bag: {bag[2:]: bag[:1] for bag in child_bags}})
             bags.add(current_bag)
-
         count = bags_calculator(bag_dict, rules, "shiny gold")
         return count
     
 print(day7_1("input.txt"))
-print(day7_2("input.txt"))
+print(day7_2("input_test.txt"))
