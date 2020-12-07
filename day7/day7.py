@@ -56,4 +56,4 @@ def day7_2(filename):
         return count
     
 print(day7_1("input.txt"))
-print(day7_2("input_test.txt"))
+print(day7_2("input.txt"))
