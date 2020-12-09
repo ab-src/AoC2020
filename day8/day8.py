@@ -1,9 +1,9 @@
-def _convert_int(arg_str):
+def _convert_int(number_string):
     arg = 0
-    if arg_str[0] == "+":
-        arg = int(arg_str[1:])
-    elif arg_str[0] == "-":
-        arg = int(arg_str)
+    if number_string[0] == "+":
+        arg = int(number_string[1:])
+    elif number_string[0] == "-":
+        arg = int(number_string)
         
     return arg
 
