@@ -47,6 +47,7 @@ def test_op_change(base_op, base_arg, ins_ptr, base_ptr, accumulator, executed_i
         executed_ins.append(ins_ptr)
         op, arg = parse_instruction(program[ins_ptr])
         _, ins_ptr = execute_instruction(op, arg, ins_ptr)
+        
     return changed_op, ins_ptr, base_ptr, accumulator, executed_ins
     
 def day8_1(filename):
