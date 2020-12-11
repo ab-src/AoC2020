@@ -24,20 +24,6 @@ def find_next_adapter(joltage, adapters, one_diff, two_diff, three_diff):
         adapters.remove(value)
         
     return adapters, joltage, one_diff, two_diff, three_diff
-
-def find_sums(adapters, max_jolts, sub_list=[]):
-    s = sum(sub_list)
-    
-    if s == max_jolts:
-        print(f"sum({sub_list})={max_jolts}")
-    if s >= max_jolts:    
-        return
-    
-    for idx in range(len(adapters)):
-        value = adapters[idx]
-        rest_of_list = adapters[idx+1:]
-        sub_list.append(value)
-        find_sums(rest_of_list, max_jolts, sub_list)
         
 def find_combinations(adapters):
     adapters = sorted(adapters)
